@@ -1,6 +1,6 @@
 # The PostgreSQL Game
 
-The goal of this game is to get the passwords for the various user accounts in the PostgreSQl cluster. Retriving a password for a user unlocks the ability to get the password for the next user. Usernames are postgres, postgres1, postgres2, and so on. As soon as yoy have the password for the next user, connect as that user and proceed with the next level.
+The goal of this game is to get the passwords for the various user accounts in the PostgreSQl cluster. Retriving a password for a user unlocks the ability to get the password for the next user. Usernames are postgres, postgres1, postgres2, and so on. As soon as yoy have the password for the next user, connect as that user and proceed with the next level. You should also continue to work in the last database which was used for the previous level.
 
 This is heavily inspired by https://overthewire.org/wargames/bandit/ which does more or less the same on the operating system level. The reason for all this is, to get people trained on basic PostgreSQL stuff.
 
@@ -67,3 +67,30 @@ The password for the user postgres6 is the the work_mem setting of user postgres
 ### Level 7 -> Level 8
 
 The password for the user postgres7 is the data type of the only column of the only table available in the current search_path concatenated with the column name. 
+
+### Level 8 -> Level 9
+
+The password for the user postgres8 is the name of the last partition of the only partitioned table in the database.
+
+### Level 9 -> Level 10
+
+The password for the user postgres9 is the combination of the currently connected user, the current database and the session user.
+
+### Level 10 -> Level 11
+
+The password for the user postgres10 is the Locale Provide of the current database.
+
+### Level 11 -> Level 12
+
+The password for the user postgres11 is 10.325TB in bytes
+
+### Level 12 -> Level 13
+
+The password for the user postgres12 is the size of an empty row in PostgreSQL in bytes.
+
+### Level 13 -> Level 14
+
+The password for the user postgres13 is the category description of the "between" keyword
+
+
+
