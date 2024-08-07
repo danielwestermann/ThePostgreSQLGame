@@ -1,4 +1,4 @@
-# Thw PostgreSQL Game
+# The PostgreSQL Game
 
 The goal of this game is to get the passwords for the various user accounts in the PostgreSQl cluster. Retriving a password for a user unlocks the ability to get the password for the next user. Usernames are postgres, postgres1, postgres2, and so on. As soon as yoz have the password for the next user, connect as that user and proceed with the next level.
 
