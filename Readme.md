@@ -1,6 +1,6 @@
 # The PostgreSQL Game
 
-The goal of this game is to get the passwords for the various user accounts in the PostgreSQl cluster. Retriving a password for a user unlocks the ability to get the password for the next user. Usernames are postgres, postgres1, postgres2, and so on. As soon as yoz have the password for the next user, connect as that user and proceed with the next level.
+The goal of this game is to get the passwords for the various user accounts in the PostgreSQl cluster. Retriving a password for a user unlocks the ability to get the password for the next user. Usernames are postgres, postgres1, postgres2, and so on. As soon as yoy have the password for the next user, connect as that user and proceed with the next level.
 
 This is heavily inspired by https://overthewire.org/wargames/bandit/ which does more or less the same on the operating system level. The reason for all this is, to get people trained on basic PostgreSQL stuff.
 
@@ -38,7 +38,7 @@ podman exec -it ${CONTAINERID=} /bin/bash
 
 ### Level 0 -> Level 1
 
-The password for the postgres superuser is the size of PGDATA in human readable format in megabyte
+The password for the postgres superuser is the size of PGDATA in human readable format in megabyte.
 
 ### Level 1 -> Level 2
 
