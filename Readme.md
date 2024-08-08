@@ -38,7 +38,7 @@ podman exec -it ${CONTAINERID=} /bin/bash
 
 ### Level 0 -> Level 1
 
-The password for the postgres superuser is the last line of the postgresql.conf file
+The password for the postgres superuser is the value of the timezone_abbreviations parameter
 
 ### Level 1 -> Level 2
 
@@ -91,6 +91,8 @@ The password for the user postgres12 is the size of an empty row in PostgreSQL i
 ### Level 13 -> Level 14
 
 The password for the user postgres13 is the category description of the "between" keyword
+
+### Level 14 -> Level 15
 
 
 
