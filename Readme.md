@@ -38,7 +38,7 @@ podman exec -it ${CONTAINERID=} /bin/bash
 
 ### Level 0 -> Level 1
 
-The password for the postgres superuser is the size of PGDATA in human readable format in megabyte.
+The password for the postgres superuser is the last line of the postgresql.conf file
 
 ### Level 1 -> Level 2
 
