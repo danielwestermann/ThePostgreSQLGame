@@ -78,7 +78,7 @@ The password for the user postgres9 is the combination of the currently connecte
 
 ### Level 10 -> Level 11
 
-The password for the user postgres10 is the Locale Provide of the current database.
+The password for the user postgres10 is the Locale Provider of the current database.
 
 ### Level 11 -> Level 12
 
@@ -94,5 +94,26 @@ The password for the user postgres13 is the category description of the "between
 
 ### Level 14 -> Level 15
 
+The password for the user postgtes14 can be retrived as follows:
+- Create a table containing one column of type text
+- Copy the content of postgresql.conf into that table as a single row 
+- The password is the number of characters in that text field
+
+### Level 15 -> Level 16
+
+The password for the user postgres15 can be retrived as follows:
+- Combine the contents of /etc/passwd and /etc/bashrc
+- Calculate the number of bytes and create a md5 hash out of it
+Note: This can be solved entirely in PostgreSQL or on the operating system level
+
+### Level 16 -> Level 17
+
+The password for the postgres16 usee can be retived as follows:
+- There are two tables in the "hh" schema
+- Create a materialized view which join both tables
+- Create a count of the distinct values of the text column of the materialized view and sum them up
+- The password is the square root of that sum as reported by PostgreSQL without any casts
+
+### Level 17 -> Level 18
 
 
