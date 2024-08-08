@@ -2,8 +2,7 @@
 
 The goal of this game is to get the passwords for the various user accounts in the PostgreSQl cluster. Retriving a password for a user unlocks the ability to get the password for the next user. Usernames are postgres, postgres1, postgres2, and so on. As soon as yoy have the password for the next user, connect as that user and proceed with the next level. You should also continue to work in the last database which was used for the previous level.
 
-This is heavily inspired by https://overthewire.org/wargames/bandit/ which does more or less the same on the operating system level. The reason for all this is, to get people trained on basic PostgreSQL stuff.
-
+This is heavily inspired by https://overthewire.org/wargames/bandit/ which does more or less the same on the operating system level. The reason for all this is, to get people trained on basic PostgreSQL stuff. You are supposed to do some research on your own if face concepts or tools you don't know yet.
 
 ## The container
 
@@ -113,7 +112,30 @@ The password for the postgres16 usee can be retived as follows:
 - Create a materialized view which join both tables
 - Create a count of the distinct values of the text column of the materialized view and sum them up
 - The password is the square root of that sum as reported by PostgreSQL without any casts
+Hint: You need to to the last two steps in one statement to get the correct password.
 
 ### Level 17 -> Level 18
 
+The password for the user postgres17 can be retrived as follows:
+- Install the pg_buffercache extension
+- The password is the "Description" of that extension
+
+### Level 18 -> Level 19
+
+The password for the user postgres18 can be retived as follows:
+- Get the number of buffers reported in pg_buffercache
+- Convert this value into megabyte and compare the value with the parameter shared_buffers
+- The password is the difference between those 2 multiplied by 1024
+
+### Level 19 -> Level 20
+
+The password for the user postgres19 can be retived as follows:
+- Create a new database with the postgres18 
+- Load this database with pgbanch and scale factor of 10
+- Run a standard pgbench benchmark for 10 seconds
+- The password is the "transaction type" reported by pgbench
+
+### Level 20 -> Level 21
+
+The password for the user postgres20 can be retived as follows:
 
