@@ -2,7 +2,7 @@
 
 The goal of this game is to get the passwords for the various user accounts in the PostgreSQl cluster. Retriving a password for a user unlocks the ability to get the password for the next user. Usernames are postgres, postgres1, postgres2, and so on. As soon as yoy have the password for the next user, connect as that user and proceed with the next level. You should also continue to work in the last database which was used for the previous level.
 
-Some of the levels can be solved in PostgreSQL and on the operating system level. While both are valid, the idea is to solve the levels entirely in PostgreSQL and it's tools. It is also not required to solve one level after the other, as most of them can be solved individually (but some cannot).
+Some of the levels can be solved in PostgreSQL and on the operating system level. While both are valid, the idea is to solve the levels entirely in PostgreSQL and it's tools. It is also not required to solve one level after the other, as most of them can be solved individually (but some cannot). AS of now, the levels are very beginner friendly but there might be more sophisticated levels in the future. If you have ideas for more levels, please let me know by creating an issue.
 
 This is heavily inspired by https://overthewire.org/wargames/bandit/ which does more or less the same on the operating system level. The reason for all this is, to get people trained on basic PostgreSQL stuff. You are supposed to do some research on your own if you face concepts or tools you don't know yet.
 
