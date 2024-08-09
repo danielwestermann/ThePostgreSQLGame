@@ -107,6 +107,7 @@ The password for the user postgtes14 can be retrived as follows:
 The password for the user postgres15 can be retrived as follows:
 - Combine the contents of /etc/passwd and /etc/bashrc
 - Calculate the number of bytes and create a md5 hash out of it
+
 Note: This can be solved entirely in PostgreSQL or on the operating system level
 
 ### Level 16 -> Level 17
@@ -116,6 +117,7 @@ The password for the postgres16 usee can be retrived as follows:
 - Create a materialized view which join both tables
 - Create a count of the distinct values of the text column of the materialized view and sum them up
 - The password is the square root of that sum as reported by PostgreSQL without any casts
+
 Hint: You need to to the last two steps in one statement to get the correct password.
 
 ### Level 17 -> Level 18
@@ -135,7 +137,7 @@ The password for the user postgres18 can be retrived as follows:
 
 The password for the user postgres19 can be retrived as follows:
 - Create a new database with the postgres18 user
-- Load this database with pgbanch and a scale factor of 10
+- Load this database with pgbench and a scale factor of 10
 - Run a standard pgbench benchmark for 10 seconds
 - The password is the "transaction type" reported by pgbench
 
@@ -143,7 +145,7 @@ The password for the user postgres19 can be retrived as follows:
 
 The password for the user postgres20 can be retrived as follows:
 - There is a table "l1" containing some strings
-- Select from this tables ordering by the only column available
+- Select from this table ordering by the only column available
 - Do the same select using a collation of zgh-x-icu for the order by
 - The password is the first and the third row of the result 
 
