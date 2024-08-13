@@ -151,5 +151,7 @@ The password for the user postgres20 can be retrived as follows:
 
 ### Level 21 -> Level 22
 
-The password for the user postgres21 can be retrived as follows:
+There is a user defined function which gives you the password for user postgres21.
+
+
 
