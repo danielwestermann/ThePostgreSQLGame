@@ -153,5 +153,15 @@ The password for the user postgres20 can be retrived as follows:
 
 There is a user defined function which gives you the password for user postgres21.
 
+### Level 22 -> Level 23
+
+The password for the user postgres22 can be retrived as follows:
+- Create a table containing one column of type boolean
+- Populate the table with 1000 true and 10 false values 
+- Create a partial index which only includes the false values
+- explain analyse a query which only selects the false values
+- The password for user postgres22 is the value of the Recheck Condition
+
+
 
 
