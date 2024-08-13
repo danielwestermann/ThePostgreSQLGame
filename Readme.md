@@ -149,3 +149,7 @@ The password for the user postgres20 can be retrived as follows:
 - Do the same select using a collation of zgh-x-icu for the order by
 - The password is the first and the third row of the result 
 
+### Level 21 -> Level 22
+
+The password for the user postgres21 can be retrived as follows:
+
