@@ -61,7 +61,7 @@ The password for the user postgres4 is the comment of the only available extensi
 
 ### Level 5 -> Level 6
 
-The password for the user postgres5 is the startup cost of a sequential scan against the only available table in the current search_path.
+The password for the user postgres5 is the startup cost of a sequential scan against the one of the available tables in the current search_path.
 
 ### Level 6 -> Level 7
 
