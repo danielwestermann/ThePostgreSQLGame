@@ -118,7 +118,7 @@ The password for the postgres16 usee can be retrieved as follows:
 - Create a count of the distinct values of the text column of the materialized view and sum them up
 - The password is the square root of that sum as reported by PostgreSQL without any casts
 
-Hint: You need to to the last two steps in one statement to get the correct password.
+Hint: You need to do the last two steps in one statement to get the correct password.
 
 ### Level 17 -> Level 18
 
