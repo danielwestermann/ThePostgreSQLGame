@@ -97,14 +97,14 @@ The password for the user postgres13 is the category description of the "between
 
 ### Level 14 -> Level 15
 
-The password for the user postgtes14 can be retrived as follows:
+The password for the user postgtes14 can be retrieved as follows:
 - Create a table containing one column of type text
 - Copy the content of postgresql.conf into that table as a single row 
 - The password is the number of characters in that text field
 
 ### Level 15 -> Level 16
 
-The password for the user postgres15 can be retrived as follows:
+The password for the user postgres15 can be retrieved as follows:
 - Combine the contents of /etc/passwd and /etc/bashrc
 - Calculate the number of bytes and create a md5 hash out of it
 
@@ -112,7 +112,7 @@ Note: This can be solved entirely in PostgreSQL or on the operating system level
 
 ### Level 16 -> Level 17
 
-The password for the postgres16 usee can be retrived as follows:
+The password for the postgres16 usee can be retrieved as follows:
 - There are two tables in the "hh" schema
 - Create a materialized view which join both tables
 - Create a count of the distinct values of the text column of the materialized view and sum them up
@@ -122,20 +122,20 @@ Hint: You need to to the last two steps in one statement to get the correct pass
 
 ### Level 17 -> Level 18
 
-The password for the user postgres17 can be retrived as follows:
+The password for the user postgres17 can be retrieved as follows:
 - Install the pg_buffercache extension
 - The password is the "Description" of that extension
 
 ### Level 18 -> Level 19
 
-The password for the user postgres18 can be retrived as follows:
+The password for the user postgres18 can be retrieved as follows:
 - Get the number of buffers reported in pg_buffercache
 - Convert this value into megabyte and compare the value with the parameter shared_buffers
 - The password is the difference between those 2 multiplied by 1024
 
 ### Level 19 -> Level 20
 
-The password for the user postgres19 can be retrived as follows:
+The password for the user postgres19 can be retrieved as follows:
 - Create a new database with the postgres18 user
 - Load this database with pgbench and a scale factor of 10
 - Run a standard pgbench benchmark for 10 seconds
@@ -143,7 +143,7 @@ The password for the user postgres19 can be retrived as follows:
 
 ### Level 20 -> Level 21
 
-The password for the user postgres20 can be retrived as follows:
+The password for the user postgres20 can be retrieved as follows:
 - There is a table "l1" containing some strings
 - Select from this table ordering by the only column available
 - Do the same select using a collation of zgh-x-icu for the order by
@@ -155,7 +155,7 @@ There is a user defined function which gives you the password for user postgres2
 
 ### Level 22 -> Level 23
 
-The password for the user postgres22 can be retrived as follows:
+The password for the user postgres22 can be retrieved as follows:
 - Create a table containing one column of type boolean
 - Populate the table with 1000 true and 10 false values 
 - Create a partial index which only includes the false values
