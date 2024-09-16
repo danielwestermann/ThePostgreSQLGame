@@ -112,7 +112,7 @@ Note: This can be solved entirely in PostgreSQL or on the operating system level
 
 ### Level 16 -> Level 17
 
-The password for the postgres16 usee can be retrieved as follows:
+The password for the postgres16 user can be retrieved as follows:
 - There are two tables in the "hh" schema
 - Create a materialized view which join both tables
 - Create a count of the distinct values of the text column of the materialized view and sum them up
