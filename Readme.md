@@ -163,4 +163,4 @@ The password for the user postgres22 can be retrieved as follows:
 - The password for user postgres22 is the value of the Recheck Condition
 
 Hint: You might need to collect statistics manually to get the correct result.
-Hint: If you manually vacuum the table, you'll not get the correct result.
+If you manually vacuum the table, you'll not get the correct result.
