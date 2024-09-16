@@ -95,6 +95,8 @@ The password for the user postgres12 is the size of an empty row in PostgreSQL i
 
 The password for the user postgres13 is the category description of the "between" keyword
 
+Hint: There is a function to get the list of keywords.
+
 ### Level 14 -> Level 15
 
 The password for the user postgtes14 can be retrieved as follows:
