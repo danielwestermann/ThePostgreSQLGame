@@ -1,6 +1,6 @@
 # The PostgreSQL Game
 
-The goal of this game is to get the passwords for the various user accounts in the PostgreSQl cluster. Retriving a password for a user unlocks the ability to get the password for the next user. Usernames are postgres, postgres1, postgres2, and so on. As soon as you have the password for the next user, connect as that user and proceed with the next level. You should also continue to work in the last database which was used for the previous level.
+The goal of this game is to get the passwords for the various user accounts in the PostgreSQL cluster. Retriving a password for a user unlocks the ability to get the password for the next user. Usernames are postgres, postgres1, postgres2, and so on. As soon as you have the password for the next user, connect as that user and proceed with the next level. You should also continue to work in the last database which was used for the previous level.
 
 Some of the levels can be solved in PostgreSQL and on the operating system level. While both are valid, the idea is to solve the levels entirely in PostgreSQL and it's tools. It is also not required to solve one level after the other, as most of them can be solved individually (but some cannot). As of now, the levels are very beginner friendly but there might be more sophisticated levels in the future. If you have ideas for more levels, please let me know by creating an issue.
 
@@ -10,7 +10,7 @@ While nothing is hidden and you can look at all the files which make up the game
 
 ## The container
 
-To make it as easy as possible to play the game, everything is provided as a container based on [Rocky Linu 9](https://rockylinux.org/) and the [PostgreSQL yum repository](https://yum.postgresql.org/). Please follow the steps below to build, start and log into the container.
+To make it as easy as possible to play the game, everything is provided as a container based on [Rocky Linux 9](https://rockylinux.org/) and the [PostgreSQL yum repository](https://yum.postgresql.org/). Please follow the steps below to build, start and log into the container.
 
 This was created and tested with [Podman](https://podman.io/) on Linux. [Docker](https://www.docker.com/) should work as well, bus wasn't tested.
 
@@ -99,7 +99,7 @@ Hint: There is a function to get the list of keywords.
 
 ### Level 14 -> Level 15
 
-The password for the user postgtes14 can be retrieved as follows:
+The password for the user postgres14 can be retrieved as follows:
 - Create a table containing one column of type text
 - Copy the content of postgresql.conf into that table as a single row 
 - The password is the number of characters in that text field
