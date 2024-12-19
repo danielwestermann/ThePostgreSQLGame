@@ -34,14 +34,13 @@ The password for user5 is the comment of the only available extension.
 
 The password for user6 is the startup cost of a sequential scan against the the table which contained the password for user2.
 
-
 ### Level 6 -> Level 7
 
-The password for user7 is the the work_mem setting of user user4.
+The password for user7 is the work_mem setting of user user4.
 
 ### Level 7 -> Level 8
 
-The password for user8 is the data type of the only column of he table which contained the password for user2 concatenated with the column name. 
+The password for user8 is the data type of the only column of the table which contained the password for user2 concatenated with the column name. 
 
 ### Level 8 -> Level 9
 
@@ -69,7 +68,7 @@ The password for user14 is the category description of the "between" keyword.
 
 ### Level 14 -> Level 15
 
-The password for user15 is the number of characters in the postgresql.conf file.
+The password for user15 is the number of characters in the pg_ident.conf file.
 
 ### Level 15 -> Level 16
 
