@@ -1,168 +1,126 @@
 # The PostgreSQL Game
 
-The goal of this game is to get the passwords for the various user accounts in the PostgreSQL cluster. Retriving a password for a user unlocks the ability to get the password for the next user. Usernames are postgres, postgres1, postgres2, and so on. As soon as you have the password for the next user, connect as that user and proceed with the next level. You should also continue to work in the last database which was used for the previous level.
+The goal of this game is to get the passwords for the various user accounts in the PostgreSQL cluster. Retriving a password for a user unlocks the ability to get the password for the next user. Usernames are user1, user2, user3, and so on. As soon as you have the password for the next user, connect as that user and proceed with the next level. You should also continue to work in the last database which was used for the previous level.
 
-Some of the levels can be solved in PostgreSQL and on the operating system level. While both are valid, the idea is to solve the levels entirely in PostgreSQL and it's tools. It is also not required to solve one level after the other, as most of them can be solved individually (but some cannot). As of now, the levels are very beginner friendly but there might be more sophisticated levels in the future. If you have ideas for more levels, please let me know by creating an issue.
+It is not required to solve one level after the other, as most of them can be solved individually (but some cannot). As of now, the levels are very beginner friendly but there might be more sophisticated levels in the future. If you have ideas for more levels, please let me know by creating an issue.
 
-This is heavily inspired by https://overthewire.org/wargames/bandit/ which does more or less the same on the operating system level. The reason for all this is, to get people trained on basic PostgreSQL stuff. You are supposed to do some research on your own if you face concepts or tools you don't know yet.
-
-While nothing is hidden and you can look at all the files which make up the game, it is more fun not to do so. You probably learn more, if you don't cheat :)
-
-## The container
-
-To make it as easy as possible to play the game, everything is provided as a container based on [Rocky Linux 9](https://rockylinux.org/) and the [PostgreSQL yum repository](https://yum.postgresql.org/). Please follow the steps below to build, start and log into the container.
-
-This was created and tested with [Podman](https://podman.io/) on Linux. [Docker](https://www.docker.com/) should work as well, bus wasn't tested.
-
-### To build the container image
-
-``` bash
-podman build .
-podman images
-IMAGEID=`podman images | head -2 | awk -F " " '{print $3}' | tail -1`
-```
-
-### To run and log into the container
-
-``` bash
-podman run --detach ${IMAGEID}
-CONTAINERID=`podman ps -a | tail -1 | awk -F " " '{print $1}'`
-podman exec -it ${CONTAINERID=} /bin/bash
-```
-
-### All in once: Build, start and log into the container
-
-``` bash
-./run-game.sh
-```
-
+This is heavily inspired by https://overthewire.org/wargames/bandit/ which does more or less the same on the operating system level, so all the credits for the idea in general go there. The reason for all this is, to get people trained on basic PostgreSQL stuff. You are supposed to do some research on your own if you face concepts or tools you don't know yet.
 
 ## The Game
 
+The PostgreSQL instance is reachable over the internet on an ipv6 address: 2a01:4f9:c012:24f2::1
+
 ### Level 0 -> Level 1
 
-The password for the postgres superuser is the value of the timezone_abbreviations parameter
+The password for user1 is the name of the PostgreSQL logo and the database to connect to is called "db1".
 
 ### Level 1 -> Level 2
 
-The password for the user postgres1 can be found in a table called "t".
+The password for user2 is in a user defined table in the database "db1".
 
 ### Level 2 -> Level 3
 
-The password for the user postgres2 can be found in another database in another table.
+The password for user3 is the error message you'll get when you try to create a new table as user2.
 
 ### Level 3 -> Level 4
 
-The password for the user postgres3 is the combination of relkind, relchecks and relhasindex attributes of the table which contained the password for postgres2.
+The password for user4 is the combination of relkind, relchecks and relhasindex attributes of the table which contained the password for user2.
 
 ### Level 4 -> Level 5
 
-The password for the user postgres4 is the comment of the only available extension.
+The password for user5 is the comment of the only available extension.
 
 ### Level 5 -> Level 6
 
-The password for the user postgres5 is the startup cost of a sequential scan against the one of the available tables in the current search_path.
+The password for user6 is the startup cost of a sequential scan against the the table which contained the password for user2.
 
 ### Level 6 -> Level 7
 
-The password for the user postgres6 is the the work_mem setting of user postgres5.
+The password for user7 is the work_mem setting of user user4.
 
 ### Level 7 -> Level 8
 
-The password for the user postgres7 is the data type of the only column of the only table available in the current search_path concatenated with the column name. 
+The password for user8 is the data type of the only column of the table which contained the password for user2 concatenated with the column name. 
 
 ### Level 8 -> Level 9
 
-The password for the user postgres8 is the name of the last partition of the only partitioned table in the database.
+The password for user9 is the name of the last partition of the only partitioned table in the database.
 
 ### Level 9 -> Level 10
 
-The password for the user postgres9 is the combination of the currently connected user, the current database and the session user.
+The password for user10 is the combination of the currently connected user, the current database and the session user. You can get this password with one single sql statement.
 
 ### Level 10 -> Level 11
 
-The password for the user postgres10 is the Locale Provider of the current database.
+The password for user11 is the Locale Provider of the current database.
 
 ### Level 11 -> Level 12
 
-The password for the user postgres11 is 10.325TB in bytes
+The password for user12 is 10.325TB in bytes
 
 ### Level 12 -> Level 13
 
-The password for the user postgres12 is the size of an empty row in PostgreSQL in bytes.
+The password for user13 is the size of an empty row in PostgreSQL in bytes.
 
 ### Level 13 -> Level 14
 
-The password for the user postgres13 is the category description of the "between" keyword
-
-Hint: There is a function to get the list of keywords.
+The password for user14 is the category description of the "between" keyword.
 
 ### Level 14 -> Level 15
 
-The password for the user postgres14 can be retrieved as follows:
-- Create a table containing one column of type text
-- Copy the content of postgresql.conf into that table as a single row 
-- The password is the number of characters in that text field
+The password for user15 is the number of characters in the pg_ident.conf file.
 
 ### Level 15 -> Level 16
 
-The password for the user postgres15 can be retrieved as follows:
-- Combine the contents of /etc/passwd and /etc/bashrc
-- Calculate the number of bytes and create a md5 hash out of it
-
-Note: This can be solved entirely in PostgreSQL or on the operating system level
+The password for user16 can be retrieved by calling a user defined function.
 
 ### Level 16 -> Level 17
 
-The password for the postgres16 user can be retrieved as follows:
-- There are two tables in the "hh" schema
-- Create a materialized view which join both tables
-- Create a count of the distinct values of the text column of the materialized view and sum them up
-- The password is the square root of that sum as reported by PostgreSQL without any casts
-
-Hint: You need to do the last two steps in one statement to get the correct password.
+The password for user17 is the descrition of the "LibpqwalreceiverConnect" wait event.
 
 ### Level 17 -> Level 18
 
-The password for the user postgres17 can be retrieved as follows:
-- Install the pg_buffercache extension
-- The password is the "Description" of that extension
+user17 is allowed to connect to database "db2". The password for user18 is the error message PostgreSQL is reporting when user17 is selecting from the materialited view.
 
 ### Level 18 -> Level 19
 
-The password for the user postgres18 can be retrieved as follows:
-- Get the number of buffers reported in pg_buffercache
-- Convert this value into megabyte and compare the value with the parameter shared_buffers
-- The password is the difference between those 2 multiplied by 1024
+The password for user19 is the number of rows in the materialized view.
 
 ### Level 19 -> Level 20
 
-The password for the user postgres19 can be retrieved as follows:
-- Create a new database with the postgres18 user
-- Load this database with pgbench and a scale factor of 10
-- Run a standard pgbench benchmark for 10 seconds
-- The password is the "transaction type" reported by pgbench
+user19 is allowed to connecto to database "db3". The password for user20 is in the only user defined table.
 
 ### Level 20 -> Level 21
 
-The password for the user postgres20 can be retrieved as follows:
-- There is a table "l1" containing some strings
-- Select from this table ordering by the only column available
-- Do the same select using a collation of zgh-x-icu for the order by
-- The password is the first and the third row of the result 
+user20 is allowed to connect to database "db4". The password for user21 is the start value of the only user defined sequence combined with the data type name of that sequence. 
 
 ### Level 21 -> Level 22
 
-There is a user defined function which gives you the password for user postgres21.
+The password for user22 is the last row of the only user defined table odered by the only column in that table using the 'brx-IN-x-icu' collation. 
 
 ### Level 22 -> Level 23
 
-The password for the user postgres22 can be retrieved as follows:
-- Create a table containing one column of type boolean
-- Populate the table with 1000 true and 10 false values 
-- Create a partial index which only includes the false values
-- explain analyse a query which only selects the false values
-- The password for user postgres22 is the value of the Recheck Condition
+user22 is allowed to connect to database "db5". The password for user23 is the number of bytes of the text which is in the only row in the only user defined table.
 
-Hint: You might need to collect statistics manually to get the correct result.
-If you manually vacuum the table, you'll not get the correct result.
+### Level 23 -> Level 24
+
+user23 is allowed to connect to database "db6". The password for user24 can be retrieved as follows:
+- run an explain analyze of a select * against the only user defined table asking for values of the second column which match '%22df63d33%'.
+- The password for user24 is the operator in the index condition
+
+### Level 24 -> Level 25
+
+user24 is allowed to connect to database "db7". The password for user25 can be retrieved as follows:
+- add a column with name 'd' of data type "boolean" to the only user defined table 
+- the password is the message PostgreSQL returns when the column is added
+
+### Level 25 -> Level 26
+user25 is allowed to connect to database "db8". The password for user26 is the number of files in $PGDATA.
+
+### Level 26 -> Level 27
+user26 is allowed to connecto to "db8". The password for user27 is the utc offeset of timeszone "Pacific/Pitcairn"
+
+### Level 27 -> Level 28
+user27 us allowed to connect to "db8". The password for user28 can be retrieved as follows:
+
+
