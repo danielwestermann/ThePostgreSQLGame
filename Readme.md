@@ -20,7 +20,7 @@ The password for user2 is in a user defined table in the database "db1".
 
 ### Level 2 -> Level 3
 
-The password for user3 is the error message you'll get when you try to create a new table as user2.
+The password for user3 is the error message you'll get when you try to create a new table in schema s1 as user2.
 
 ### Level 3 -> Level 4
 
