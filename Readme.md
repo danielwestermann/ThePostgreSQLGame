@@ -106,7 +106,7 @@ user22 is allowed to connect to database "db5". The password for user23 is the n
 
 user23 is allowed to connect to database "db6". The password for user24 can be retrieved as follows:
 - run an explain analyze of a select * against the only user defined table asking for values of the second column which match '%22df63d33%'.
-- The password for user24 is the operator in the index condition
+- The password for user24 is the value of "Rows Removed by Filter"
 
 ### Level 24 -> Level 25
 
@@ -121,6 +121,6 @@ user25 is allowed to connect to database "db8". The password for user26 is the n
 user26 is allowed to connecto to "db8". The password for user27 is the utc offeset of timeszone "Pacific/Pitcairn"
 
 ### Level 27 -> Level 28
-user27 us allowed to connect to "db8". The password for user28 can be retrieved as follows:
+user27 us allowed to connect to "db8". The password for user28 is the number of operators PostgreSQL is aware of. 
 
 
