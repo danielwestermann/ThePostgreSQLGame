@@ -8,7 +8,7 @@ This is heavily inspired by https://overthewire.org/wargames/bandit/ which does 
 
 ## The Game
 
-The PostgreSQL instance is reachable over the internet on an ipv6 address: 2a01:4f9:c012:24f2::1
+The PostgreSQL instance is reachable over the internet on an ipv6 address: 2a04:3542:1000:910:14a2:40ff:fed2:4f56
 
 ### Level 0 -> Level 1
 
